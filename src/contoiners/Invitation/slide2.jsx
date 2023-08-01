@@ -70,16 +70,15 @@ function Invitation () {
                     }}
                 >
                    <div 
-        
-                    data-aos="fade-up"
-                    data-aos-offset="200"
-                    data-aos-delay="50"
-                    data-aos-duration="1000"
-                    data-aos-easing="ease-in-out"
-                    data-aos-mirror="true"
-                    data-aos-once="false"
-                    data-aos-anchor-placement="top-center"
-                    >
+                      data-aos="fade-up"
+                      data-aos-offset="200"
+                      data-aos-delay="25"
+                      data-aos-duration="500"
+                      data-aos-easing="ease-in-out"
+                      data-aos-mirror="true"
+                      data-aos-once="false"
+                      data-aos-anchor-placement="top-center"
+                                  >
                       <Card className="card-two">
                           <div style={{width: '75%'}}>
                               <h3 className="text-center description lh-1" style={{fontSize: 50}}>Save The Date</h3>

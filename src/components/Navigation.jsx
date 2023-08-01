@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import { Button, Container, Form, Nav, Navbar, Offcanvas } from "react-bootstrap";
 
 
 export const Navigation = () => {
@@ -20,16 +20,21 @@ export const Navigation = () => {
                 >
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                        BCR
+                        SEARCH ENGINE
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body className=''>
                         <Nav className="justify-content-end flex-grow-1 pe-3">
                                 
-                        <Nav.Link href="#services">Our Services</Nav.Link>
-                        <Nav.Link href="#Why Us">Why Us</Nav.Link>
-                        <Nav.Link href="#Testimonial">Testimonial</Nav.Link>
-                        <Nav.Link href="#FAQ">FAQ</Nav.Link>
+                          <Form className="d-flex">
+                            <Form.Control
+                              type="search"
+                              placeholder="Search"
+                              className="me-2"
+                              aria-label="Search"
+                            />
+                            <Button variant="outline-success">Search</Button>
+                          </Form>
                         </Nav>
                                 
                     </Offcanvas.Body>

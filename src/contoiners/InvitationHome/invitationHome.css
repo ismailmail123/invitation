@@ -1,5 +1,5 @@
 .invitation-card {
-    height: 100vh;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,7 +7,9 @@
 
 .invitation-image {
     border-radius: 50%;
-    width: 300px;
+    width: 175px;
+    margin-top: 0;
+    margin-bottom: 0;
     
 }
 .invitation-text {

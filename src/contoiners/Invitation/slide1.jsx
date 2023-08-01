@@ -33,8 +33,8 @@ function Invitation () {
                     <div 
                     data-aos="fade-up"
                     data-aos-offset="200"
-                    data-aos-delay="50"
-                    data-aos-duration="1000"
+                    data-aos-delay="25"
+                    data-aos-duration="500"
                     data-aos-easing="ease-in-out"
                     data-aos-mirror="true"
                     data-aos-once="false"
@@ -43,6 +43,9 @@ function Invitation () {
                         <Card className="card-two" style={{marginTop: 150}}>
                             <div style={{width: '75%'}}>
                                 <p className="text-center description lh-1">he Wedding of Mas Deta & Risca</p>
+                                <p className="text-center fw-bold" style={{fontSize: 12}}>
+                                بِسْمِ اللهِ تَوَكَّلْتُ عَلَى اللهِ، لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ
+                                </p>
                                 <p className="text-center fw-bold" style={{fontSize: 12}}>
                                     Atas Rahmat Tuhan Yang Maha Esa, 
                                     kami bermaksud mengundang Anda di acara Kami. 
