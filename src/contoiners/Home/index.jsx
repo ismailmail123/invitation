@@ -58,7 +58,7 @@ function Home () {
                                         <Card.Title className="d-flex justify-content-end mt-2">Dear</Card.Title>
                                     </Col>
                                     <Col className="col-4">
-                                        <ReactWhatsapp className="border-0 w-100" number="085342545607" message="Hello World!!!" > <FaWhatsapp className="w-10-3 text-success w-100" /> </ReactWhatsapp>
+                                        <ReactWhatsapp className="border-0 w-100" number="081242666024" message="Hello World!!!" > <FaWhatsapp className="w-10-3 text-success w-100" /> </ReactWhatsapp>
                                     </Col>
                                 </Row>
                                 <Card.Body>
