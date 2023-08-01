@@ -5,7 +5,9 @@ import avatar from '../../assets/avatar.jpg';
 import DeleteConfirm from "../../components/Delete/deleteKonfirm";
 import UpdateConfirm from "../../components/UpdateKonfirm/UpdateKonfirm";
 import AddConfirm from "../../components/AddKonfirm/AddConfirm";
-import { FiSend } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
+import render  from 'react-dom';
+import ReactWhatsapp from 'react-whatsapp';
 
 function Home () {
 
@@ -56,10 +58,7 @@ function Home () {
                                         <Card.Title className="d-flex justify-content-end mt-2">Dear</Card.Title>
                                     </Col>
                                     <Col className="col-4">
-                                        <button className="w-100 border-0">
-                                            <FiSend className="w-100 fs-3"/>
-                                            kirim
-                                        </button>
+                                        <ReactWhatsapp className="border-0 w-100" number="085342545607" message="Hello World!!!" > <FaWhatsapp className="w-10-3 text-success w-100" /> </ReactWhatsapp>
                                     </Col>
                                 </Row>
                                 <Card.Body>
@@ -86,7 +85,7 @@ function Home () {
                                 </Card.Footer>
                             </Card>
                         </Col>
-                        <Col lg={3}>
+                        {/* <Col lg={3}>
                             <Card className="mt-3" >
                                 <Row>
                                     <Col className="col-8">
@@ -197,7 +196,7 @@ function Home () {
                                     >Delete</button>
                                 </Card.Footer>
                             </Card>
-                        </Col>   
+                        </Col>    */}
                     </Row>
                 </Tab>
                 <Tab eventKey="Table" title="Table">
