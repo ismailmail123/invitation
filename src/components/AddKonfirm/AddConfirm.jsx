@@ -78,7 +78,7 @@ const handleSubmit = () => {
               <Button
               variant="primary"
               type="submit"
-              className="w-50 mb-3"
+              className="w-75 mb-3"
               // onClick={deletedCar}
               >
               Tambahkan
