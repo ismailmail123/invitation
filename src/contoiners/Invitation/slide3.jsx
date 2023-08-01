@@ -9,9 +9,32 @@ import weddingone from '../../assets/wedding1.png';
 import background1 from '../../assets/backgound1.png';
 import cip from '../../assets/cip.jpg';
 import mandiri from '../../assets/mandiri1.png';
+import swal from "sweetalert";
 
 
 function Invitation () {
+
+  const [copyTex, setCopyText] = useState('');
+  const handleCopy = () => {
+    navigator.clipboard.writeText(copyTex)
+    swal("Berhasil disalin!", "You clicked the button!", "success")
+  }
+
+  const [copyTex1, setCopyText1] = useState('');
+  const handleCopy1 = () => {
+    navigator.clipboard.writeText(copyTex1)
+    swal("Berhasil disalin!", "You clicked the button!", "success")
+  }
+
+  
+  useEffect(()=> {
+    setCopyText1('1010010426854')
+  }, [])
+
+  useEffect(()=> {
+    setCopyText('1740002875011')
+  },[])
+
 
     return (
         <>
@@ -53,14 +76,14 @@ function Invitation () {
                             <Row>
                               <Col  style={{marginTop: '7%', fontSize: '10px'}}>
                                 <Image src={cip} style={{width: '30%', borderRadius: '5px'}}/>
-                                <h6 style={{fontSize: '13px', fontWeight: 'bold', lineHeight: '1px', marginTop: '10px'}}>085342545607</h6>
-                                <p>M Deta R Handoko</p>
+                                <h6  style={{fontSize: '13px', fontWeight: 'bold', lineHeight: '1px', marginTop: '10px'}}>1010010426854</h6>
+                                <p>M DETA R HANDOKO</p>
 
                               </Col>
                               <Col >
                                 <Image style={{width: '100%', height: '50%', backgroundColor: 'transparent'}} src={mandiri}/>
                                 <div className="ms-4">
-                                  <Button className="btn-success mb-3 p-1">salin</Button>
+                                  <Button className="btn-success mb-3 p-1" onClick={handleCopy1}>salin</Button>
                                 </div>
                                 
                               </Col>
@@ -71,14 +94,14 @@ function Invitation () {
                             <Row>
                               <Col style={{marginTop: '7%', fontSize: '10px'}}>
                                 <Image src={cip} style={{width: '30%', borderRadius: '5px'}}/>
-                                <h6 style={{fontSize: '13px', fontWeight: 'bold', lineHeight: '1px', marginTop: '10px'}}>085342545607</h6>
-                                <p>M Deta R Handoko</p>
+                                <h6 style={{fontSize: '13px', fontWeight: 'bold', lineHeight: '1px', marginTop: '10px'}}>1740002875011</h6>
+                                <p>A RISKAWATI</p>
 
                               </Col>
                               <Col >
                                 <Image style={{width: '100%', height: '50%', backgroundColor: 'transparent'}} src={mandiri}/>
                                 <div className="ms-4">
-                                  <Button className="btn-success mb-3 p-1">salin</Button>
+                                  <Button className="btn-success mb-3 p-1" onClick={handleCopy}>salin</Button>
                                 </div>
                               </Col>
                             </Row>

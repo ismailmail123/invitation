@@ -57,10 +57,11 @@ function Invitation () {
                                 src={wedding3}/>
                                 <div style={{width: '75%'}}>
                                     <p className="text-center mt-3 fw-bold" style={{fontSize: 12}}>
-                                        Tuhan kami, Tuhan yang kami kasihi serta kami sembah. 
-                                        Tuhan pemilik kehidupan serta cinta kasih, kami memohon berkat kepada-Mu 
-                                        untuk pengantin wanita dan pengantin pria pada kehidupan bersama mereka 
-                                        sebagai sepasang kekasih yang dimadu cinta.
+                                       Dan diantara ayat-ayat-Nya ialah Dia Menciptakan untukmu istri-istri dari jenismu sendiri supaya kamu merasa nyaman kepadanya, 
+                                       dan dijadikan-Nya di antaramu mawadah dan warahmah. 
+                                       sesungguhnya pada yang demikian itu benar-benar terdapat 
+                                       tanda-tanda bagi kaum berfikir <br></br>
+                                       (Ar-Rum 21)
                                     </p> 
                                 </div>
                                 

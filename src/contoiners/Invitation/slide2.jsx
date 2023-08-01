@@ -90,8 +90,10 @@ function Invitation () {
                               Sabtu, 09 Desember 2023
                               </p>
                           </div>
+                          <a href="https://maps.app.goo.gl/NhAz6MHHmB6ZNNUi6">
+                            <Button className="btn-success mb-5">Buka Lokasi</Button>
+                          </a>
                           
-                          <Button className="btn-success mb-5">Buka Lokasi</Button>
                           <Clock
                                   timerDays={timerDays}
                                   timerHours={timerHours}
