@@ -59,11 +59,11 @@ const handleSubmit = () => {
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Alamat</Form.Label>
+                <Form.Label>No. HP</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="number"
                   onChange={(e) => {
-                    setFormValues({ ...formValues, alamat: e.target.value });
+                    setFormValues({ ...formValues, phone: e.target.value });
                   }}
                 />
               </Form.Group>

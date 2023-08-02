@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Container, Image } from "react-bootstrap";
+import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import './invitation.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -10,6 +10,13 @@ import weddingtwo from '../../assets/wedding2.png';
 import Clock from "../../components/Clock/Clock";
 import wedding3 from '../../assets/wedding.jpeg';
 import background1 from '../../assets/wedding.jpeg'
+import {TbMapSearch} from 'react-icons/tb';
+import {ImHome3} from 'react-icons/im';
+import{ FaUserFriends, FaRegImages, FaMusic } from 'react-icons/fa';
+import ReactAudioPlayer from 'react-audio-player';
+import sound from '../../assets/indah-yastami-cover.mp3';
+import useSound from 'use-sound';
+import sound1 from '../../assets/AUD-20200305-WA0031.mp3';
 import Slide1 from './slide1';
 import Slide2 from './slide2';
 import Slide3 from './slide3';
@@ -24,6 +31,8 @@ function Invitation () {
     const [timerHours, setTimerHours] = useState();
     const [timerMinutes, setTimerMinutes] = useState();
     const [timerSeconds, setTimerSeconds] = useState();
+    
+    const [play, {stop}] = useSound(sound1);
 
     let interval;
 
@@ -62,6 +71,55 @@ function Invitation () {
     
     return (
         <>
+         <Container>
+            <div className="fixed-bottom bg-success p-2 text-dark bg-opacity-75"
+            style={{backgroundColor: '#1f85ad', width: '10re', height: '5%', borderRadius: '100px', }}>
+                <div className="d-flex justify-content-center  ">
+                    <Row>
+                        <Col>
+                            <p>
+                              <a href="#home">
+                                <ImHome3 className="mb-3" />
+                              </a>
+                            </p>
+                        </Col>
+                        <Col className="ms-4 ">
+                          <p>
+                          <a href="#user">
+                            <FaUserFriends className="mb-3" />   
+                          </a>
+                          </p>
+                        </Col>
+                        <Col className="ms-4 ">
+                          <p>
+                            <a href="#galeri">
+                              <FaRegImages className="mb-3" />
+                            </a>
+                          </p>
+                        </Col>
+                        <Col className="ms-4 ">
+                          <p>
+                            <a href="#maps">
+                              <TbMapSearch className="mb-3" />
+                            </a>
+                          </p>
+                        </Col>
+                        <Col className="ms-4">
+                          <p>
+                              <Button
+                              onMouseEnter={() => play()}
+                              >
+                              <FaMusic className="mb-3" />
+                              </Button>
+                            {/* </a> */}
+                          </p>
+                          
+                        </Col>
+                    </Row>
+                </div>
+            </div>
+        </Container>
+            
         <div 
         
         data-aos="fade-up"
@@ -80,6 +138,7 @@ function Invitation () {
                     backgroundSize: 'cover',
                     height: '760px'
                 }}
+                id="home"
             >
                 <div className="cardslide"
                     style={{

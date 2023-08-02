@@ -10,6 +10,7 @@
     "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.3.1",
     "react": "^18.2.0",
+    "react-audio-player": "^0.17.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
@@ -20,6 +21,7 @@
     "react-whatsapp": "^0.3.0",
     "redux": "^4.2.1",
     "sweetalert": "^2.1.2",
+    "use-sound": "^4.0.1",
     "web-vitals": "^2.1.4",
     "yarn": "^1.22.19"
   },

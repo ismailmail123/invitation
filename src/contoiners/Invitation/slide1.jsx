@@ -40,7 +40,7 @@ function Invitation () {
                     data-aos-once="false"
                     data-aos-anchor-placement="top-center"
                     >
-                        <Card className="card-two" style={{marginTop: 150}}>
+                        <Card className="card-two" style={{marginTop: 150}} id="user">
                             <div style={{width: '75%'}}>
                                 <p className="text-center description lh-1">he Wedding of Mas Deta & Risca</p>
                                 <p className="text-center fw-bold" style={{fontSize: 12}}>

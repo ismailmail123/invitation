@@ -63,7 +63,7 @@ function Invitation () {
                       data-aos-once="false"
                       data-aos-anchor-placement="top-center"
                   >
-                      <Card className="card-two">
+                      <Card className="card-two" >
                           <div style={{width: '85%'}}>
                               <p className="text-center description lh-1" style={{fontSize: 40}}>Titip Hadiah Online</p>
                               <p className="text-center fw-bold lh-1" style={{fontSize: 15}}>
