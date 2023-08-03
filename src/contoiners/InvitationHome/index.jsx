@@ -1,17 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Container, Image } from "react-bootstrap";
 
 import wedding3 from '../../assets/wedding.jpeg';
 import './invitationHome.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import axios from "axios";
 // ..
 AOS.init();
 
 function InvitationHome () {
 
     const navigate = useNavigate();
+    const {id} = useParams();
+
+    const [cards, setCards] = useState()
+ 
+  const URL = "http://localhost:3000"
+  const getCards = () => {
+    axios({
+      method: "GET",
+      url: `${URL}/recipients/${id}`
+    })
+    .then(cards => {
+      setCards(cards.data)
+      console.log('ini data idnya', cards.data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+  useEffect(() => {
+    getCards()
+  },[])
 
     return (
         <>
@@ -32,7 +54,7 @@ function InvitationHome () {
                         <Image className="invitation-image"  src={wedding3} />
                     </div>
                     <h4 className="text-center" >Kepada Bapak/Ibu </h4>
-                    <h4 className="text-center" >Budi</h4>
+                    <h4 className="text-center" >{cards?.name}</h4>
                     <p className="text-center mt-3">
                         Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/i untuk Hadir di Acara Kami.
                     </p>

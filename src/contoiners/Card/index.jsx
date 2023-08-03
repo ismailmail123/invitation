@@ -109,9 +109,9 @@ const [showUpdateConfirm, setShowUpdateConfirm] = useState();
                                     </Row>
                                     <Card.Body>
                                         <Row className="d-flex">
-                                            <a href="/invitation">
+                                            <button className='border-0' onClick={() => navigate(`/invitation/${recipient.id}`)}>
                                                 <Image className="w-50 rounded mx-auto d-block" src={avatar} />
-                                            </a> 
+                                            </button> 
                                             <p className="fw-bold lh-1">Nama : {recipient.name}</p>
                                             <p className="fw-bold lh-1">Alamat : {recipient.adress}</p>
                                             <p className="fw-bold lh-1">Ucapan : {recipient.say}</p>

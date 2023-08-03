@@ -16,7 +16,7 @@ function App() {
       element: <HomePage />,
     },
     {
-      path: '/invitation',
+      path: '/invitation/:id',
       element: <InvitationPage />,
     },
     {
