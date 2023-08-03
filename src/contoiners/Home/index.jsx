@@ -6,10 +6,15 @@ import DeleteConfirm from "../../components/Delete/deleteKonfirm";
 import UpdateConfirm from "../../components/UpdateKonfirm/UpdateKonfirm";
 import AddConfirm from "../../components/AddKonfirm/AddConfirm";
 import { FaWhatsapp } from 'react-icons/fa';
+import { RiDeleteBinLine } from 'react-icons/ri';
+import { BsPencil } from 'react-icons/bs';
 import axios from "axios";
 import ReactWhatsapp from 'react-whatsapp';
 import './home.css'
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router-dom";
+import TableHome from '../Table/index';
+import CardHome from '../Card/index';
+
 
 function Home () {
 
@@ -17,8 +22,11 @@ function Home () {
     const [showUpdateConfirm, setShowUpdateConfirm] = useState();
     const [showAddConfirm, setShowAddConfirm] = useState();
     const [recipient, setRecipient] = useState()
+    const [cards, setCards] = useState()
 
-    // const id = useParams()
+    const navigate = useNavigate();
+
+// const { id } = useParams();
     const URL = "http://localhost:3000"
   const getData = () => {
     axios({
@@ -26,8 +34,8 @@ function Home () {
       url: `${URL}/recipients`
     })
     .then(recipients => {
-    //   setRecipient(cards.data)
-      console.log('ini data', recipients)
+      setRecipient(recipients.data)
+      console.log('ini data', recipients.data)
     })
     .catch(err => {
       console.log(err)
@@ -37,16 +45,51 @@ function Home () {
     getData()
   },[])
 
+
+//   const getDataId = () => {
+//     axios({
+//       method: "GET",
+//       url: `http://localhost:3000/recipients/3`
+//     })
+//     .then(recipients => {
+//       setRecipient(recipients.data)
+//       console.log('ini data ber id', recipients.data)
+//     })
+//     .catch(err => {
+//       console.log(err)
+//     })
+//   }
+//   useEffect(() => {
+//     getDataId()
+//   },[])
+
+  const deleteHandler = () => {
+    axios({
+      method: "DELETE",
+      url: `${URL}/recipients/2`
+    })
+    .then(result => {
+      console.log(`Data berhasil dihapus ${result}`)
+      setRecipient()
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+  useEffect(() => {
+   deleteHandler()
+  },[])
+
     return(
         <>
-        <DeleteConfirm
+        {/* <DeleteConfirm
         show={showConfirm} onHide={() => setShowConfirm(false)}
         //  id={id}
         />
         <UpdateConfirm
         show={showUpdateConfirm} onHide={() => setShowUpdateConfirm(false)}
         //  id={id}
-        />
+        /> */}
         <AddConfirm
         show={showAddConfirm} onHide={() => setShowAddConfirm(false)}
         //  id={id}
@@ -64,7 +107,8 @@ function Home () {
                     <h4>+add</h4>
                 </Button>
             </Col>
-                  
+
+           
         </Row>
         <Tabs
                 defaultActiveKey="home"
@@ -72,7 +116,8 @@ function Home () {
                 className="mb-3 justify-content-center"
               >
                 <Tab eventKey="Card" title="Card">
-                    <Row className="mt-5">
+                    <CardHome />
+                    {/* <Row className="mt-5">
                         <Col lg={3}>
                             <Card className="mt-3" >
                             <Row>
@@ -312,38 +357,11 @@ function Home () {
                             </Card>
                         </Col>
                         
-                    </Row>
+                    </Row> */}
                 </Tab>
                 <Tab eventKey="Table" title="Table">
-                    <Table striped bordered hover>
-                        <thead>
-                            <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            </tr>
-                            <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            </tr>
-                            <tr>
-                            <td>3</td>
-                            <td colSpan={2}>Larry the Bird</td>
-                            <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </Table>
+                <TableHome />
+                 
                 </Tab>
               </Tabs>
 

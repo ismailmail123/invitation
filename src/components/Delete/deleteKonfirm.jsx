@@ -53,7 +53,7 @@ function DeleteConfirm(props) {
                 menghapus?
               </Card.Text>
               <Button className="w-25" variant="outline-primary"
-            //    onClick={deletedCar}
+              //  onClick={deletedCar}
                >Ya</Button>
               <Button className="ms-3 w-25" variant="outline-primary" onClick={() => onHide()}>Tidak</Button>
             </Card.Body>
