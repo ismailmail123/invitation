@@ -8,7 +8,7 @@ AOS.init();
 import weddingone from '../../assets/wedding1.png';
 import background1 from '../../assets/backgound1.png';
 import cip from '../../assets/cip.jpg';
-import wedding4 from '../../assets/wedding4.jpeg';
+import penutup1 from '../../assets/penutup1.jpeg';
 
 
 function Invitation () {
@@ -47,7 +47,7 @@ function Invitation () {
                     data-aos-anchor-placement="top-center"
                   >
                       <Card className="card-two">
-                        <Image style={{borderRadius: '10%', boxShadow: '100px', borderColor: 'purple', width: '50%', height: '25%'}} src={wedding4} />
+                        <Image style={{borderRadius: '10%', boxShadow: '100px', borderColor: 'purple', width: '50%', height: '25%'}} src={penutup1} />
                         <div style={{width: '85%'}}>
                               <p className="text-center lh-1" style={{fontSize: 15, marginTop: '20%'}}>Merupakan Suatu Kebahagiaan dan Kehormatan bagi Kami, Apabila Bapak/Ibu/Saudara/i, Berkenan Hadir di Acara kami</p>
                           </div>

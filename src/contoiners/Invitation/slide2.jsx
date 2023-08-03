@@ -82,9 +82,7 @@ function Invitation () {
                       <Card className="card-two"  id="maps">
                           <div style={{width: '75%'}}>
                               <h3 className="text-center description lh-1" style={{fontSize: 50}}>Save The Date</h3>
-                              <h2 className="text-center fw-bold lh-1" style={{fontSize: 20}}>
-                              Resepsi Pernikahan
-                              </h2>
+                              
                               <p className="text-center fw-bold lh-1" style={{fontSize: 25}}>
                               Sabtu, 09 Desember 2023
                               </p>

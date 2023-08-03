@@ -14,9 +14,8 @@ import {TbMapSearch} from 'react-icons/tb';
 import {ImHome3} from 'react-icons/im';
 import{ FaUserFriends, FaRegImages, FaMusic } from 'react-icons/fa';
 import ReactAudioPlayer from 'react-audio-player';
-import sound from '../../assets/indah-yastami-cover.mp3';
 import useSound from 'use-sound';
-import sound1 from '../../assets/AUD-20200305-WA0031.mp3';
+import sound1 from '../../assets/audio.mpeg';
 import Slide1 from './slide1';
 import Slide2 from './slide2';
 import Slide3 from './slide3';
@@ -150,8 +149,8 @@ function Invitation () {
                         <Image
                             style={{borderRadius: '50%', width: '75%', height: '50%'}}
                             src={wedding3}/>
-                        <p className="description">Mas Deta & Risca</p>
-                        <p className="description">09 Maret 2023</p>
+                        <p className="description">Deta & Riska</p>
+                        <p className="description">Sabtu, 09 Desember 2023</p>
                             <Clock
                                 timerDays={timerDays}
                                 timerHours={timerHours}

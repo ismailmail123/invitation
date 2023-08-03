@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Image, Row, Tab, Table, Tabs } from "react-bootstrap";
 
 import avatar from '../../assets/avatar.jpg';
@@ -6,16 +6,36 @@ import DeleteConfirm from "../../components/Delete/deleteKonfirm";
 import UpdateConfirm from "../../components/UpdateKonfirm/UpdateKonfirm";
 import AddConfirm from "../../components/AddKonfirm/AddConfirm";
 import { FaWhatsapp } from 'react-icons/fa';
-
+import axios from "axios";
 import ReactWhatsapp from 'react-whatsapp';
 import './home.css'
+import { useParams } from "react-router";
 
 function Home () {
 
     const [showConfirm, setShowConfirm] = useState();
     const [showUpdateConfirm, setShowUpdateConfirm] = useState();
     const [showAddConfirm, setShowAddConfirm] = useState();
+    const [recipient, setRecipient] = useState()
 
+    // const id = useParams()
+    const URL = "http://localhost:3000"
+  const getData = () => {
+    axios({
+      method: "GET",
+      url: `${URL}/recipients`
+    })
+    .then(recipients => {
+    //   setRecipient(cards.data)
+      console.log('ini data', recipients)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+  useEffect(() => {
+    getData()
+  },[])
 
     return(
         <>

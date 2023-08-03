@@ -42,9 +42,9 @@ function Invitation () {
                     >
                         <Card className="card-two" style={{marginTop: 150}} id="user">
                             <div style={{width: '75%'}}>
-                                <p className="text-center description lh-1">he Wedding of Mas Deta & Risca</p>
+                                <p className="text-center description lh-1">The Wedding of Deta & Riska</p>
                                 <p className="text-center fw-bold" style={{fontSize: 12}}>
-                                بِسْمِ اللهِ تَوَكَّلْتُ عَلَى اللهِ، لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ
+                                    ِبِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْم
                                 </p>
                                 <p className="text-center fw-bold" style={{fontSize: 12}}>
                                     Atas Rahmat Tuhan Yang Maha Esa, 

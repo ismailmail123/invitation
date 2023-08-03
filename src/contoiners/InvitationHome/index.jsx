@@ -27,7 +27,7 @@ function InvitationHome () {
         >
             <Container>
                 <Card className="mt-3 mb-3 border-0" style={{height: '100vh'}}>
-                    <h4 className="invitation-text">Terima kasih telah mengunjungi undangan kami kami harapkan kedatangan bapak ibu</h4> 
+                    <h4 className="invitation-text">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ</h4> 
                     <div className="invitation-card">
                         <Image className="invitation-image"  src={wedding3} />
                     </div>
