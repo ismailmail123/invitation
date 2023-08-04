@@ -19,7 +19,7 @@ const Navbar = () => {
 
 
  
-  const URL = "http://localhost:3000"
+  const URL = "https://drab-lime-sea-urchin-gown.cyclic.app"
   const getCards = () => {
     axios({
       method: "GET",

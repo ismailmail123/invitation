@@ -26,7 +26,7 @@ const EditUser = (props) => {
     })
     const [update, setUpdate] = useState();
 
-    const URL = "http://localhost:3000"
+    const URL = "https://drab-lime-sea-urchin-gown.cyclic.app"
     const getUpdate = () => {
       axios({
         method: "GET",
@@ -47,7 +47,7 @@ const EditUser = (props) => {
 
       useEffect(() => {
        
-        axios.get(`http://localhost:3000/recipients/${id}`, id)
+        axios.get(`https://drab-lime-sea-urchin-gown.cyclic.app/recipients/${id}`, id)
         .then(res => {
           res.data.map(item => item.id)
           console.log('ini respon', res)
@@ -71,7 +71,7 @@ const EditUser = (props) => {
     // });
 
     const onSubmit = (data) => {
-      axios.put(`http://localhost:3000/recipients/${id}`, data).then((res) => {
+      axios.put(`https://drab-lime-sea-urchin-gown.cyclic.app/recipients/${id}`, data).then((res) => {
         if(useForm.length !== 0){
             swal("Gagal Update!", "You clicked the button!", "error")
             

@@ -25,10 +25,11 @@ function Invitation (props) {
          
         
     })
+    
 
     useEffect(() => {
        
-      axios.get(`http://localhost:3000/recipients/${id}`, id)
+      axios.get(`https://drab-lime-sea-urchin-gown.cyclic.app/recipients/${id}`, id)
       .then(res => {
         res.data.map(item => item.id)
         console.log('ini respon', res)
@@ -38,7 +39,7 @@ function Invitation (props) {
     },[])
 
     const onSubmit = (data) => {
-      axios.put(`http://localhost:3000/recipients/${id}`, data).then((res) => {
+      axios.put(`https://drab-lime-sea-urchin-gown.cyclic.app/recipients/${id}`, data).then((res) => {
         if(useForm.length !== 0){
             swal("Upsss Maaf", "You clicked the button!", "error")
             
