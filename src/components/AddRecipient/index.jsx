@@ -10,7 +10,7 @@ import swal from "sweetalert";
 
 const FormEditCar = () => {
 
-    const URL = "https://drab-lime-sea-urchin-gown.cyclic.app"
+    const URL = "http://localhost:3000"
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const params = useParams();

@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const {id} = useParams();
  
-  const URL = "https://drab-lime-sea-urchin-gown.cyclic.app"
+  const URL = "http://localhost:3000"
   const getCards = () => {
     axios({
       method: "GET",

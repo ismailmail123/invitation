@@ -26,7 +26,7 @@ const EditUser = (props) => {
     })
     const [update, setUpdate] = useState();
 
-    const URL = "https://drab-lime-sea-urchin-gown.cyclic.app"
+    const URL = "http://localhost:3000"
     const getUpdate = () => {
       axios({
         method: "GET",
@@ -47,7 +47,7 @@ const EditUser = (props) => {
 
       useEffect(() => {
        
-        axios.get(`https://drab-lime-sea-urchin-gown.cyclic.app/recipients/${id}`, id)
+        axios.get(`http://localhost:3000/recipients/${id}`, id)
         .then(res => {
           res.data.map(item => item.id)
           console.log('ini respon', res)

@@ -1,81 +1,199 @@
+// import axios from "axios";
+// import React, { useEffect, useState } from "react";
+// import { useParams } from "react-router";
+
+// function Edit (){
+
+//     const {id} = useParams();
+
+//     const [cards, setCards] = useState()
+ 
+//   const URL = "http://localhost:3000"
+//   const getCards = () => {
+//     axios({
+//       method: "PUT",
+//       url: `${URL}/recipients/${id}`
+//     })
+//     .then(cards => {
+//       setCards(cards.data)
+//       console.log('ini data idnya', cards.data)
+//     })
+//     .catch(err => {
+//       console.log(err)
+//     })
+//   }
+//   useEffect(() => {
+//     getCards()
+//   },[])
+
+
+//     return (
+//         <div>{cards?.name}</div>
+//     )
+// }
+
+// export default Edit;
 import React from 'react';
-import {Form, Button, Col, Container, Row, InputGroup} from 'react-bootstrap';
+import {Form, Button, Col, Container, Row} from 'react-bootstrap';
+// import iconUpload from "../../assets/image/fi_upload.svg";
 import './FormEditCar.css'
 import { useNavigate, useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { update } from '../../redux/recipient/sliceRecipient';
+// import { update, updateField } from '../../redux/FormCar/slice';
 import swal from "sweetalert";
 
 const FormEditCar = () => {
 
-    const URL = "http://localhost:3000"
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const params = useParams();
     const login = useSelector((state) => state.login);
 
-    const [recipient, setRecipient] = useState();
+    const [tempUrl, setTempUrl] = useState()
     const [formValues, setFormValues] = useState({
-        name: null,
-        price: 0,
-        image: "",
-        category: null,
+        // name: '',
+        // adress: '',
+        // phone: '',
         
     });
-    const [name, setName] = useState('');
-    const [adress, setAdress] = useState('');
-    const [phone, setPhone] = useState(0);
-   
 
-   
+    // const {id} = useParams();
+
+    // const [cards, setCards] = useState()
+
+
+    const URL = "http://localhost:3000"
   const getData = () => {
     axios({
       method: "GET",
-      url: `${URL}/recipients`
+      url: `${URL}/recipients/${params.id}`
     })
-    .then(recipients => {
-      setRecipient(recipients.data)
-      console.log('ini data di bagianupdate recipient', recipients.data)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }
-  useEffect(() => {
-    getData()
-  },[])
-const submitHendler = () => {
-    axios({
-      method: "POST",
-      url: `${URL}/recipients`,
-      data:{
-        name,adress,phone
-      }
-    })
-    .then(result => {
-      console.log(result)
-      getData()
-      navigate('/')
+    .then(cards => {
+      setFormValues(cards.data)
+      console.log('ini data', cards.data)
     })
     .catch(err => {
       console.log(err)
     })
   }
   useEffect(() => {
-    getData()
-  },[])
+    getData(params.id)
+  },[params.id])
 
 
+  // const handleSubmit = () => {
+  //   axios({
+  //     method: "PUT",
+  //     url: `${URL}/recipients/${params.id}`
+  //   })
+  //   .then(cards => {
+  //     setFormValues(cards.data)
+  //     console.log('ini data idnya', cards.data)
+  //   })
+  //   .catch(err => {
+  //     console.log(err)
+  //   })
+  // }
+  // useEffect(() => {
+  //   handleSubmit(params.id)
+  // },[params.id])
+
+
+  const fetchDataCar = async (e) => {
+        // e.preventDefault();
+
+        try{
+            const response = await axios.put(`${URL}/recipients/${params.id}`
+            
+            );
+            console.log("response", response.data)
+            setFormValues(response.data)
+        }catch(error) {
+            console.log("error", error)
+
+        }
+    };
+
+    useEffect(() => {
+        fetchDataCar(params.id);
+    },[params.id]);
+
+    // const fetchDataCar = async (e) => {
+    //     // e.preventDefault();
+
+    //     try{
+    //         const response = await axios.get(`https://api-car-rental.binaracademy.org/admin/car/${params.id}`,
+    //         {
+    //             headers: {
+    //                 access_token: login.user.access_token,
+    //             }
+    //         }
+    //         );
+    //         // console.log("response", response.data)
+    //         setFormValues(response.data)
+    //     }catch(error) {
+    //         console.log("error", error)
+
+    //     }
+    // };
+
+    // useEffect(() => {
+    //     fetchDataCar(params.id);
+    // },[params.id]);
+
+    // const onChangeFiles = (e) => {
+    //     const selectedFiles = e.target.files;
+    //     const file = selectedFiles[0];
+    //     const tempUrlValue = URL.createObjectURL(file);
+    //     setTempUrl(tempUrlValue);
+
+    //     console.log("select file", selectedFiles)
+
+    //     setFormValues({
+    //         name: formValues.name,
+    //         price: formValues.price,
+    //         image: file,
+    //         category: formValues.category,
+    //     })
+    // }
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+    //     const formData = new FormData();
+
+    //     formData.append('name', formValues.name);
+    //     formData.append('price', formValues.price);
+    //     formData.append('image', formValues.image);
+    //     formData.append('category', formValues.category);
+    //     try{
+    //         const response = await axios.put(`https://api-car-rental.binaracademy.org/admin/car/${params.id}`, 
+    //         formData,
+    //         {
+    //             headers: {
+    //                 access_token: login.user.access_token,
+    //             }
+    //         }
+    //         )
+    //         // console.log("response>", response)
+    //         dispatch(update(response.data))
+    //         navigate('/carlist');
+    //     }catch(error) {
+    //         dispatch(updateField());
+    //         swal("Update Gagal","", "error")
+    //     }
+        
+    // };
 
     return (
         <Container fluid className='p-0 m-0 containerEditCar'>
             <Row className="m-0">
-                <h4 style={{marginLeft: "330px", height: "100%"}}>Add Recipient</h4>
+                <h4 style={{marginLeft: "330px", height: "100%"}}>Edit Car</h4>
                 <Col xs="auto" className='colEditcar d-none d-md-block h-100'></Col>
             </Row>
-          
+            <Form onSubmit={fetchDataCar}> 
                 <div className='car-container'>
                     <div className='row row-car'>
                         <div className="w-100 bg-white p-3">
@@ -99,11 +217,12 @@ const submitHendler = () => {
                                         <Col sm="8">
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Input Nama/Tipe Mobil"
+                                                placeholder="Input Nama"
                                                 className='forminput'
-                                                onChange={(e) => setName(e.target.value)} 
-                                              />
-                                                
+                                                onChange={(e) => setFormValues({...formValues, name: e.target.value})}
+                                                value={formValues.name ?? ""}
+                                            
+                                            />
                                         </Col>
                                     </Row>
                                 </Form.Group>
@@ -117,7 +236,7 @@ const submitHendler = () => {
                                             column
                                             sm="4"
                                             className="mb-0 d-flex align-items-center">
-                                            Alamat
+                                            Adress
                                             <span className="text-danger" data-testid="label-SpanPrice">
                                                 *
                                             </span>
@@ -127,7 +246,8 @@ const submitHendler = () => {
                                                 type="text"
                                                 placeholder="Input Harga Sewa Mobil"
                                                 className='forminput'
-                                                onChange={(e) => setAdress(e.target.value)}
+                                                onChange={(e) => setFormValues({...formValues, adress: e.target.value})}
+                                                value={formValues.adress ?? ""}
                                             />
                                         </Col>
                                     </Row>
@@ -152,18 +272,13 @@ const submitHendler = () => {
                                                 type="number"
                                                 placeholder="Input Harga Sewa Mobil"
                                                 className='forminput'
-                                                onChange={(e) => setPhone(e.target.value)}
+                                                onChange={(e) => setFormValues({...formValues, phone: e.target.value})}
+                                                value={formValues.phone ?? ""}
                                             />
                                         </Col>
                                     </Row>
                                 </Form.Group>
 
-                                <Form.Group
-                                    className="mb-3"
-                                    controlId="image"
-                                    data-testid="wrapper-Photo">
-                                    
-                                </Form.Group>
                                 <div className="formInfo">
                                     <Row className="mb-3">
                                         <Col sm="4" className="mb-0">
@@ -194,7 +309,7 @@ const submitHendler = () => {
                             <Button
                                 type="submit"
                                 className='d-flex align-items-center text-white btnSave'
-                                onClick={() => submitHendler()}
+                                // onClick={handleSubmit}
                                 >
                                 Save
                             </Button>
@@ -202,6 +317,7 @@ const submitHendler = () => {
 
                     </div>
                 </div>
+            </Form>
         </Container>
     )
 }
