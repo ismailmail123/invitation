@@ -15,7 +15,7 @@ import {ImHome3} from 'react-icons/im';
 import{ FaUserFriends, FaRegImages, FaMusic } from 'react-icons/fa';
 import ReactAudioPlayer from 'react-audio-player';
 import useSound from 'use-sound';
-import sound1 from '../../assets/audio.mpeg';
+import sound1 from '../../assets/audio backsound.mp3';
 import Slide1 from './slide1';
 import Slide2 from './slide2';
 import Slide3 from './slide3';

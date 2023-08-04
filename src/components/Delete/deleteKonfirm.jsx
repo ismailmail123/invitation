@@ -1,5 +1,8 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { Button, Card, Modal } from "react-bootstrap";
+import { Navigate, useNavigate } from "react-router";
 import Delete from "../../assets/delete.png";
 // import { useDispatch } from "react-redux";
 // import deletedId from './CarItem';
@@ -10,8 +13,10 @@ function DeleteConfirm(props) {
   const { 
     show,
     onHide,
-    // id 
+    id
     } = props;
+    const [cards, setCards] = useState();
+    const navigate = useNavigate()
 //   const dispatch = useDispatch();
 
 
@@ -35,8 +40,46 @@ function DeleteConfirm(props) {
     
 // }
 
+const URL = "http://localhost:3000"
+const getCards = () => {
+  axios({
+    method: "GET",
+    url: `${URL}/recipients`
+  })
+  .then(cards => {
+    setCards(cards.data)
+    console.log('ini data tabelnya', cards)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+useEffect(() => {
+  getCards()
+},[])
+
+
+
+const deleteHandler = (id) => {
+  axios({
+    method: "DELETE",
+    url: `${URL}/recipients/${id}`
+  })
+  .then(result => {
+    console.log(`Data berhasil dihapus ${result}`)
+    getCards()
+    navigate('/')
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+useEffect(() => {
+  getCards()
+},[])
+
   return (
-    <Modal show={show} onHide={onHide} >
+    <Modal show={show} onHide={onHide} id={id}>
     <Modal.Header className="border-0" closeButton />
       <Modal.Body>
         <div>
@@ -53,7 +96,7 @@ function DeleteConfirm(props) {
                 menghapus?
               </Card.Text>
               <Button className="w-25" variant="outline-primary"
-              //  onClick={deletedCar}
+               onClick={deleteHandler}
                >Ya</Button>
               <Button className="ms-3 w-25" variant="outline-primary" onClick={() => onHide()}>Tidak</Button>
             </Card.Body>

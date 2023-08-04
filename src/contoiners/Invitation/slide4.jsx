@@ -7,18 +7,54 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 AOS.init();
 import weddingone from '../../assets/wedding1.png';
 import background1 from '../../assets/backgound1.png';
-import cip from '../../assets/cip.jpg';
-import mandiri from '../../assets/mandiri1.png';
+import { useParams } from "react-router";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import swal from "sweetalert";
 
 
-function Invitation () {
+function Invitation (props) {
 
-  const [formValues, setFormValues] = useState()
+  const {id} = useParams();
 
+    const {register, handleSubmit, setValue} = useForm({});
+    const [cards, setCards] = useState({
+          id: id,
+          name: "",
+          say: "",
+         
+        
+    })
 
-  const handleSubmit = () => {
+    useEffect(() => {
+       
+      axios.get(`http://localhost:3000/recipients/${id}`, id)
+      .then(res => {
+        res.data.map(item => item.id)
+        console.log('ini respon', res)
+        setValue({...cards, name: res.data.name, say: res.data.say })
+      })
+      .catch(err => console.log(err))
+    },[])
 
-  }
+    const onSubmit = (data) => {
+      axios.put(`http://localhost:3000/recipients/${id}`, data).then((res) => {
+        if(useForm.length !== 0){
+            swal("Upsss Maaf", "You clicked the button!", "error")
+            
+        }else{
+            swal("Terima Kasih", "You clicked the button!", "success")
+        }
+        // navigate('/beranda')
+        props.history.push("/recipients");
+        
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    }
+
+  
     return (
         <>
         
@@ -50,20 +86,22 @@ function Invitation () {
                           <div style={{width: '85%'}}>
                               <p className="text-center description lh-1" style={{fontSize: 40}}>Kehadiran</p>
                           </div>
-                          <Form onSubmit={handleSubmit}>
+                          <Form onSubmit={handleSubmit(onSubmit)}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                               <Form.Label>Nama</Form.Label>
                               <Form.Control
                                 type="text"
-                                onChange={(e) => {
-                                  setFormValues({ ...formValues, name: e.target.value });
-                                }}
+                                name="name"
+                                {...register("name")}
                               />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                               <label className="form-label">Ucapana</label>
-                              <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                              <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"
+                              name="say"
+                              {...register("say")}
+                              ></textarea>
                               
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -87,6 +125,7 @@ function Invitation () {
                 </div>
                 
             </Container>
+            
         
         </>
     )

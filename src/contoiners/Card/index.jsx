@@ -3,14 +3,10 @@ import { InputGroup, Button, Form, Table, Image, Row, Col, Card } from 'react-bo
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import axios from'axios';
-import { RiDeleteBinLine } from 'react-icons/ri';
-import { BsPencil } from 'react-icons/bs';
 import ReactWhatsapp from 'react-whatsapp';
 import avatar from '../../assets/avatar.jpg';
 import { FaWhatsapp } from 'react-icons/fa';
 import DeleteConfirm from "../../components/Delete/deleteKonfirm";
-import UpdateConfirm from "../../components/UpdateKonfirm/UpdateKonfirm";
-import AddConfirm from "../../components/AddKonfirm/AddConfirm";
 
 
 const Navbar = () => {
@@ -18,11 +14,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [cards, setCards] = useState([]);
   const [showConfirm, setShowConfirm] = useState();
-const [showUpdateConfirm, setShowUpdateConfirm] = useState(); 
 
   const {id} = useParams();
-
-
  
   const URL = "http://localhost:3000"
   const getCards = () => {
@@ -32,7 +25,7 @@ const [showUpdateConfirm, setShowUpdateConfirm] = useState();
     })
     .then(cards => {
       setCards(cards.data)
-      console.log('ini data', cards)
+      console.log('ini data tampilan card', cards)
     })
     .catch(err => {
       console.log(err)
@@ -85,11 +78,6 @@ const [showUpdateConfirm, setShowUpdateConfirm] = useState();
         show={showConfirm} onHide={() => setShowConfirm(false)}
          id={id}
         />
-        <UpdateConfirm
-        show={showUpdateConfirm} onHide={() => setShowUpdateConfirm(false)}
-         id={id}
-        />
-       
         <Row>
                     {
                       cards.length !== 0 ?
@@ -109,26 +97,15 @@ const [showUpdateConfirm, setShowUpdateConfirm] = useState();
                                     </Row>
                                     <Card.Body>
                                         <Row className="d-flex">
-                                            <button className='border-0' onClick={() => navigate(`/invitation/${recipient.id}`)}>
-                                                <Image className="w-50 rounded mx-auto d-block" src={avatar} />
+                                            <button  className='border-0 bg-white' onClick={() => navigate(`/invitation/${recipient.id}`)}>
+                                                <Image  className="w-50 rounded mx-auto d-block" src={avatar} />
                                             </button> 
                                             <p className="fw-bold lh-1">Nama : {recipient.name}</p>
                                             <p className="fw-bold lh-1">Alamat : {recipient.adress}</p>
                                             <p className="fw-bold lh-1">Ucapan : {recipient.say}</p>
                                             </Row>
                                     </Card.Body>
-                                    <Card.Footer className="d-flex align-items-center justify-content-between">
-                                        <button
-                                        className="btn btn-outline-success "
-                                        onClick={()  => setShowUpdateConfirm(true)}
-                                        >
-                                            Update
-                                        </button>
-                                        <button 
-                                        className="btn btn-outline-danger "
-                                        onClick={()  => setShowConfirm(true)}
-                                        >Delete</button>
-                                    </Card.Footer>
+                                    
                                 </Card>
                             </Col>
                             

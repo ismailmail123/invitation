@@ -53,13 +53,13 @@ function InvitationHome () {
                     <div className="invitation-card">
                         <Image className="invitation-image"  src={wedding3} />
                     </div>
-                    <h4 className="text-center" >Kepada Bapak/Ibu </h4>
-                    <h4 className="text-center" >{cards?.name}</h4>
-                    <p className="text-center mt-3">
+                    <h4 className="text-center description" >Kepada Bapak/Ibu </h4>
+                    <h4 className="text-center description" >{cards?.name}</h4>
+                    <p className="text-center mt-3 fw-bold">
                         Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/i untuk Hadir di Acara Kami.
                     </p>
                     <div className="d-flex justify-content-center ">
-                        <Button className="invitation-button mt-3" onClick={() => navigate('/visited')} >Buka Undangan Anda</Button>
+                        <Button className="invitation-button mt-3" onClick={() => navigate(`/visited/${id}`)} >Buka Undangan Anda</Button>
                     </div>
                 </Card>
             </Container>

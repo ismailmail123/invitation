@@ -27,7 +27,7 @@ const Navbar = () => {
     })
     .then(cards => {
       setCards(cards.data)
-      console.log('ini data', cards)
+      console.log('ini data tabelnya', cards)
     })
     .catch(err => {
       console.log(err)

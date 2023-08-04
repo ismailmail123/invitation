@@ -5,8 +5,9 @@ import HomePage from './pages/homePage';
 import InvitationPage from "./pages/invitationPage";
 import InvitationVisitedPage from "./pages/invitation-visited";
 import Update from './contoiners/Table';
-import Edit from './contoiners/Table/Edit';
+import Edit from './contoiners/Table/Edit user';
 import Card from "./contoiners/Card/index";
+import AddRecipient from './components/AddRecipient/index';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
       element: <InvitationPage />,
     },
     {
-      path: '/visited',
+      path: '/visited/:id',
       element: <InvitationVisitedPage />,
     },
     {
@@ -35,7 +36,10 @@ function App() {
       path: '/cards',
       element: <Card />,
     },
-    
+    {
+      path: 'add',
+      element: <AddRecipient />,
+    },
   ]);
   return <RouterProvider router={router} />
 }

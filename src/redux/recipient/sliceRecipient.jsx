@@ -4,33 +4,33 @@ import dayjs from 'dayjs';
 const recipientSlice = createSlice({
     name: 'listRecipient',
     initialState: {
-        recipient: [],
+        recipients: [],
         recipientItem: [],
     },
     reducers: {
         add(state, action){
-            const currentTodos = [...state.todos];
-            const newTodo = {
+            const currentRecipient = [...state.recipients];
+            const newRecipient = {
                 ...action.payload,
                 createdAt: dayjs().format(),
             }
-            currentTodos.push(newTodo);
-            state.todos = currentTodos;
+            currentRecipient.push(newRecipient);
+            state.todos = currentRecipient;
         },
         remove(state, action){
-            const currentTodos = [...state.todos];
+            const currentRecipients = [...state.recipients];
             const { index } = action.payload;
-            currentTodos.splice(index, 1);
-            state.todos = currentTodos;
+            currentRecipients.splice(index, 1);
+            state.todos = currentRecipients;
         },
         update (state, action){
-            const currentTodos = [...state.todos];
-            const {index, ...todoItem} = action.payload;
-            currentTodos[index] = todoItem
-            state.todos = currentTodos;
+            const currentRecipients = [...state.recipients];
+            const {index, ...recipientItem} = action.payload;
+            currentRecipients[index] = recipientItem
+            state.todos = currentRecipients;
         },
         setRecipientItem(state, action){
-            state.todoItem = { ...action.payload };
+            state.recipientItem = { ...action.payload };
         
         },
     },
