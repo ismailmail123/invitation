@@ -101,7 +101,7 @@ const submitHendler = () => {
                                         <Col sm="8">
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Input Nama/Tipe Mobil"
+                                                placeholder="Input Nama Anda"
                                                 className='forminput'
                                                 onChange={(e) => setName(e.target.value)} 
                                               />
@@ -127,7 +127,7 @@ const submitHendler = () => {
                                         <Col sm="8">
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Input Harga Sewa Mobil"
+                                                placeholder="Inputkan Alamat lengkap anda"
                                                 className='forminput'
                                                 onChange={(e) => setAdress(e.target.value)}
                                             />
@@ -152,7 +152,7 @@ const submitHendler = () => {
                                         <Col sm="8">
                                             <Form.Control
                                                 type="number"
-                                                placeholder="Input Harga Sewa Mobil"
+                                                placeholder="Inputkan No. Hp anda"
                                                 className='forminput'
                                                 onChange={(e) => setPhone(e.target.value)}
                                             />
@@ -164,22 +164,7 @@ const submitHendler = () => {
                                     className="mb-3"
                                     controlId="image"
                                     data-testid="wrapper-Photo">
-                                    
                                 </Form.Group>
-                                <div className="formInfo">
-                                    <Row className="mb-3">
-                                        <Col sm="4" className="mb-0">
-                                            Created at
-                                        </Col>
-                                        <Col sm="8">{formValues.createdAt}</Col>
-                                    </Row>
-                                    <Row>
-                                        <Col sm="4" className="mb-0">
-                                            Updated at
-                                        </Col>
-                                        <Col sm="8">{formValues.updatedAt}</Col>
-                                    </Row>
-                                </div>
                             </fieldset>
                         </div>
                         <div

@@ -82,9 +82,9 @@ const Navbar = () => {
                   <thead>
                     <tr className='text-center'>
                       <th>ID</th>
-                      <th>Nma</th>
-                      <th>Adress</th>
-                      <th>Phone</th>
+                      <th>Nama</th>
+                      <th>Alamat</th>
+                      <th>Telepon</th>
                       
                     </tr>
                   </thead>
