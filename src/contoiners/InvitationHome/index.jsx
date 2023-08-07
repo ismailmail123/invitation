@@ -25,7 +25,6 @@ function InvitationHome () {
     })
     .then(cards => {
       setCards(cards.data)
-      console.log('ini data idnya', cards.data)
     })
     .catch(err => {
       console.log(err)

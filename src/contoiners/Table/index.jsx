@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router';
 import axios from'axios';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { BsPencil } from 'react-icons/bs';
+import LoadingTable from '../../components/LoadingTable';
 
 const Navbar = () => {
 
@@ -27,7 +28,6 @@ const Navbar = () => {
     })
     .then(cards => {
       setCards(cards.data)
-      console.log('ini data tabelnya', cards)
     })
     .catch(err => {
       console.log(err)
@@ -45,7 +45,6 @@ const Navbar = () => {
       url: `${URL}/recipients/${id}`
     })
     .then(result => {
-      console.log(`Data berhasil dihapus ${result}`)
       getCards()
     })
     .catch(err => {
@@ -62,7 +61,6 @@ const Navbar = () => {
       url: `${URL}/cards/${id}`
     })
     .then(result => {
-      console.log(`Data berhasil diupdate ${result}`)
       getCards()
     })
     .catch(err => {
@@ -103,15 +101,31 @@ const Navbar = () => {
                             <Row >
                               <div className='d-flex justify-content-end align-items-center'>
                                 <button className='btn btn-outline-danger me-3' onClick={() => deleteHandler(+card.id)} > <RiDeleteBinLine /> </button>
-                                <button className="btn btn-outline-primary" onClick={()=>navigate(`/edit/${card.id}`)}  > <BsPencil /></button>
+                                <button className="btn btn-outline-primary" onClick={()=>navigate(`/update/${card.id}`)}  > <BsPencil /></button>
                               </div>
                                 
                               
                             </Row>
                           </tr>
+                          
                         )
                       }) : 
-                      <p>there is no items</p>
+                      <tr>
+                        <td>
+                          <LoadingTable />
+                        </td>
+                        <td>
+                          <LoadingTable />
+                        </td> 
+                        <td>
+                         <LoadingTable />
+                        </td>      
+                        <td>
+                         <LoadingTable />
+                        </td>
+                      </tr> 
+                      
+                      
                      }
                   </tbody>
                 </Table>

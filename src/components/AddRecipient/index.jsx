@@ -37,7 +37,6 @@ const FormEditCar = () => {
     })
     .then(recipients => {
       setRecipient(recipients.data)
-      console.log('ini data di bagian add recipient', recipients.data)
     })
     .catch(err => {
       console.log(err)
@@ -55,7 +54,6 @@ const submitHendler = () => {
       }
     })
     .then(result => {
-      console.log(result)
       getData()
       navigate('/')
     })
@@ -71,18 +69,18 @@ const submitHendler = () => {
 
     return (
         <Container fluid className='p-0 m-0 containerEditCar'>
-            <Row className="m-0">
-                <h4 style={{marginLeft: "330px", height: "100%"}}>Add Recipient</h4>
+            <div className="m-0">
+                <h4 className='text-center' style={{marginLeft: "50px", height: "100%"}}>Add Recipient</h4>
                 <Col xs="auto" className='colEditcar d-none d-md-block h-100'></Col>
-            </Row>
+            </div>
             {/* <Form
             onSubmit={handleSubmit}
             >  */}
                 <div className='car-container'>
                     <div className='row row-car'>
-                        <div className="w-100 bg-white p-3">
+                        <div className="w-100 bg-white d-flex justify-content-center p-3">
 
-                            <fieldset className='font-template w-100'>
+                            <div className='font-template w-100'>
                                 <Form.Group
                                     className="mb-3"
                                     controlId="name"
@@ -151,7 +149,7 @@ const submitHendler = () => {
                                         </Form.Label>
                                         <Col sm="8">
                                             <Form.Control
-                                                type="number"
+                                                type="text"
                                                 placeholder="Inputkan No. Hp anda"
                                                 className='forminput'
                                                 onChange={(e) => setPhone(e.target.value)}
@@ -165,10 +163,10 @@ const submitHendler = () => {
                                     controlId="image"
                                     data-testid="wrapper-Photo">
                                 </Form.Group>
-                            </fieldset>
+                            </div>
                         </div>
                         <div
-                            className="d-flex"
+                            className="d-flex justify-content-center"
                             style={{
                             marginTop: "40px",
                             marginRight: 0
@@ -190,35 +188,7 @@ const submitHendler = () => {
 
                     </div>
                 </div>
-            {/* </Form> */}
-            {/* <div className='col-6 d-flex justify-content-center p-2' style={{ height: '100vh' }}>
-              <div className=' card p-3 w-100 d-flex justify-content-center'>
-                <h3 className='mb-5'>Welcome to Binar Color Generator</h3>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Nama</Form.Label>
-                    <InputGroup className='mb-3'>
-                      <Form.Control type="text" placeholder="Masukkan nama anda" onChange={(e) => 
-                      setName(e.target.value)} />
-                    </InputGroup>
-                  </Form.Group>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Alamat</Form.Label>
-                    <InputGroup className='mb-3'>
-                      <Form.Control type="text" placeholder="Masukkan NIK anda" onChange={(e) => 
-                      setAdress(e.target.value)}/>
-                    </InputGroup>
-                  </Form.Group>
-                  <Form.Group className="mb-3">
-                    <Form.Label>No. Hp</Form.Label>
-                    <InputGroup className='mb-3'>
-                      <Form.Control type="text" placeholder="jenis kelamin" onChange={(e) => 
-                      setPhone(e.target.value)}/>
-                    </InputGroup>
-                  </Form.Group>
-                  
-                  <Button  variant="success" className='w-100' type='submit' onClick={() => submitHendler()} >Submit</Button>{' '}
-              </div> 
-            </div>             */}
+           
         </Container>
     )
 }

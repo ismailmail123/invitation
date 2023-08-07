@@ -7,6 +7,7 @@ import ReactWhatsapp from 'react-whatsapp';
 import avatar from '../../assets/avatar.jpg';
 import { FaWhatsapp } from 'react-icons/fa';
 import DeleteConfirm from "../../components/Delete/deleteKonfirm";
+import LoadingCard from '../../components/LoadingCard/index';
 
 
 const Navbar = () => {
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [showConfirm, setShowConfirm] = useState();
 
   const {id} = useParams();
+  const one = "Yth Kepada Bapak/Ibu/Saudara/i"
  
   const URL = "https://invitation-lm0g.onrender.com"
   const getCards = () => {
@@ -25,7 +27,6 @@ const Navbar = () => {
     })
     .then(cards => {
       setCards(cards.data)
-      console.log('ini data tampilan card', cards)
     })
     .catch(err => {
       console.log(err)
@@ -43,7 +44,6 @@ const Navbar = () => {
       url: `${URL}/recipients/${id}`
     })
     .then(result => {
-      console.log(`Data berhasil dihapus ${result}`)
       getCards()
     })
     .catch(err => {
@@ -60,7 +60,6 @@ const Navbar = () => {
       url: `${URL}/cards/${id}`
     })
     .then(result => {
-      console.log(`Data berhasil diupdate ${result}`)
       getCards()
     })
     .catch(err => {
@@ -85,14 +84,18 @@ const Navbar = () => {
                         return(
                             <>
                                
-                            <Col lg={3} key={recipient.id}>
+                            <Col lg={3} key={id}>
                                 <Card className="mt-3" >
                                 <Row>
                                         <Col className="col-8">
                                             <Card.Title className="d-flex justify-content-end mt-2">Dear</Card.Title>
                                         </Col>
                                         <Col className="col-4">
-                                            <ReactWhatsapp className="border-0 w-100" number={recipient.phone} message={`https://invitation-wedding-nine.vercel.app/invitation/${recipient.id}`} > <FaWhatsapp className="w-10-3 text-success w-100" /> </ReactWhatsapp>
+                                            <ReactWhatsapp className="border-0 w-100" number={recipient.phone} message={` ${one}
+                                            ${recipient.name} untuk berkenan hadir diacara kami, berikut link lengkap acara kami :
+                                             https://invitation-wedding-nine.vercel.app/invitation/${recipient.id} 
+                                             merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i 
+                                             berkenan untuk hadir dan memberikan do'a restu`} > <FaWhatsapp className="w-10-3 text-success w-100" /> </ReactWhatsapp>
                                         </Col>
                                     </Row>
                                     <Card.Body>
@@ -113,7 +116,22 @@ const Navbar = () => {
                             
                         )
                       }) : 
-                      <p>there is no items</p>
+                      <>
+                      <Row>
+                        <Col lg={3}>
+                          <LoadingCard />
+                        </Col>
+                        <Col lg={3}>
+                          <LoadingCard />
+                        </Col>
+                        <Col lg={3}>
+                          <LoadingCard />
+                        </Col>
+                        <Col lg={3}>
+                          <LoadingCard />
+                        </Col>
+                      </Row>
+                      </>
                      }
          </Row>        
     </div>

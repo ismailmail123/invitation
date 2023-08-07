@@ -48,7 +48,6 @@ const getCards = () => {
   })
   .then(cards => {
     setCards(cards.data)
-    console.log('ini data tabelnya', cards)
   })
   .catch(err => {
     console.log(err)
@@ -66,7 +65,6 @@ const deleteHandler = (id) => {
     url: `${URL}/recipients/${id}`
   })
   .then(result => {
-    console.log(`Data berhasil dihapus ${result}`)
     getCards()
     navigate('/')
   })
@@ -74,9 +72,7 @@ const deleteHandler = (id) => {
     console.log(err)
   })
 }
-useEffect(() => {
-  getCards()
-},[])
+
 
   return (
     <Modal show={show} onHide={onHide} id={id}>

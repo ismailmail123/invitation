@@ -32,7 +32,6 @@ function Invitation (props) {
       axios.get(`https://invitation-lm0g.onrender.com/recipients/${id}`, id)
       .then(res => {
         res.data.map(item => item.id)
-        console.log('ini respon', res)
         setValue({...cards, name: res.data.name, say: res.data.say })
       })
       .catch(err => console.log(err))
