@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const {id} = useParams();
  
-  const URL = "http://localhost:3000"
+  const URL = "https://invitation-lm0g.onrender.com"
   const getCards = () => {
     axios({
       method: "GET",
