@@ -170,7 +170,8 @@ const submitHendler = () => {
                         <div
                             className="d-flex"
                             style={{
-                            marginTop: "40px"
+                            marginTop: "40px",
+                            marginRight: 0
                         }}>
                             <Button
                                 className='d-flex align-items-center me-3 btnCancel'
