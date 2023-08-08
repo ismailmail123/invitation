@@ -93,7 +93,7 @@ const Navbar = () => {
                                         <Col className="col-4">
                                             <ReactWhatsapp className="border-0 w-100" number={recipient.phone} message={` ${one}
                                             ${recipient.name} untuk berkenan hadir diacara kami, berikut link lengkap acara kami :
-                                            https://invitation-deta-riska.vercel.app/invitation/${recipient.id} 
+                                            https://invitation-wedding-nine.vercel.app/invitation/${recipient.id} 
                                              merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i 
                                              berkenan untuk hadir dan memberikan do'a restu`} > <FaWhatsapp className="w-10-3 text-success w-100" /> </ReactWhatsapp>
                                         </Col>
