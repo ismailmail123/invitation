@@ -49,7 +49,7 @@ const FormEditCar = (props) => {
             swal("Gagal Update!", "You clicked the button!", "error")
             
         }else{
-            swal("Berhasil disalin!", "You clicked the button!", "success")
+            swal("Data berhasil diupdate!", "You clicked the button!", "success")
             navigate('/')
         }
         // navigate('/beranda')
