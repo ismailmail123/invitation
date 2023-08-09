@@ -154,6 +154,7 @@ const submitHendler = () => {
                                                 className='forminput'
                                                 onChange={(e) => setPhone(e.target.value)}
                                             />
+                                            <p className="lh-1">sertakan kode negara (+6285xxx)</p>
                                         </Col>
                                     </Row>
                                 </Form.Group>
