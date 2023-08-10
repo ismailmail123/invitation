@@ -92,7 +92,7 @@ const Navbar = () => {
                       <th>Nama</th>
                       <th>Alamat</th>
                       <th>Telepon</th>
-                      <th>Action</th>
+                      <th>Actions</th>
                       
                     </tr>
                   </thead>
