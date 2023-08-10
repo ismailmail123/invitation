@@ -68,7 +68,7 @@ const FormEditCar = (props) => {
     return (
         <Container fluid className='p-0 m-0 containerEditCar'>
             <div className="m-0">
-                <h4 className='text-center' style={{marginLeft: "50px", height: "100%"}}>Add Recipient</h4>
+                <h4 className='text-center' style={{marginLeft: "50px", height: "100%"}}>Update Recipient</h4>
                 <Col xs="auto" className='colEditcar d-none d-md-block h-100'></Col>
             </div>
             <Form onSubmit={handleSubmit(onSubmit)} key={id}>

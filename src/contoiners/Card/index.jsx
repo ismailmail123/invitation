@@ -85,19 +85,19 @@ const Navbar = () => {
                         return(
                             <>
                                
-                            <Col lg={3} key={id}>
+                            <Col lg={3} key={id} className='mt-3'>
                                 <Card className="mt-3 h-100" >
                                 <Row>
                                         <Col className="col-4">
                                         <button type="button" className="btn bg-white position-relative">
-                                          <IoMdNotificationsOutline className='w-100' />{
+                                          <IoMdNotificationsOutline className='w-100 h-100' />{
                                             recipient && recipient.say === null ? 
                                             <>
                                             </>
                                              : 
                                             <>
                                              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                            1
+                                            1+
                                             <span className="visually-hidden">unread messages</span>
                                           </span>
                                             </>
@@ -110,7 +110,7 @@ const Navbar = () => {
                                             <Card.Title className="d-flex justify-content-end mt-2">Dear</Card.Title>
                                         </Col>
                                         <Col className="col-4">
-                                            <ReactWhatsapp className="border-0 w-100" number={recipient.phone} message={` ${one}
+                                            <ReactWhatsapp className="border-0 w-100 " number={recipient.phone} message={` ${one}
 Bapak/Ibu/Saudara/i
 *${recipient.name}*
 _____________________________________ 
@@ -126,7 +126,7 @@ merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i
 berkenan untuk hadir dan memberikan do'a restu.
 
 والسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ
-`} > <FaWhatsapp className="w-10-3 text-success w-100" /> </ReactWhatsapp>
+`} > <FaWhatsapp className="w-10-3 text-success w-50" style={{height: '25%'}}/> </ReactWhatsapp>
                                         </Col>
                                     </Row>
                                     <Card.Body>
@@ -149,16 +149,16 @@ berkenan untuk hadir dan memberikan do'a restu.
                       }) : 
                       <>
                       <Row>
-                        <Col lg={3}>
+                        <Col lg={3} className='mt-3'>
                           <LoadingCard />
                         </Col>
-                        <Col lg={3}>
+                        <Col lg={3} className='mt-3'>
                           <LoadingCard />
                         </Col>
-                        <Col lg={3}>
+                        <Col lg={3} className='mt-3'>
                           <LoadingCard />
                         </Col>
-                        <Col lg={3}>
+                        <Col lg={3} className='mt-3'>
                           <LoadingCard />
                         </Col>
                       </Row>

@@ -1,4 +1,4 @@
-body{
+/* body{
     margin: 0;
     padding: 0;
 }
@@ -26,4 +26,23 @@ body{
 } 
 label{
     margin-top: 10px;
+} */
+
+.search{
+    width: 25%;
 }
+.form-search{
+    display: flex;
+    justify-content: end;
+}
+
+@media (max-width: 576px) {
+    .search{
+       
+        width: 50%;
+    }
+    .form-search{
+        display: flex;
+        justify-content: start;
+    }
+  }

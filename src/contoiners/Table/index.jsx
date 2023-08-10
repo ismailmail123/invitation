@@ -6,13 +6,14 @@ import axios from'axios';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { BsPencil } from 'react-icons/bs';
 import LoadingTable from '../../components/LoadingTable';
+import './style.css';
 
 const Navbar = () => {
 
   const navigate = useNavigate();
 
   const [cards, setCards] = useState([]);
-
+  const [search, setSearch] = useState('');
 
   
 
@@ -76,6 +77,14 @@ const Navbar = () => {
       <div className='container-fluid p-3 ' style={{ height: '100%' }}>
         <div className='row w-100'>
             <div className=' p-3'>
+              <Form className='mb-3 form-search'>
+                <InputGroup className='search d-flex justify-content-end'>
+                  <Form.Control 
+                    onChange={(e) =>setSearch(e.target.value)}
+                    placeholder='Serch...'
+                  />
+                </InputGroup>
+              </Form>
             <Table striped>
                   <thead>
                     <tr className='text-center'>
@@ -87,9 +96,14 @@ const Navbar = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {
+                    { 
+                    // cards.filter((item) => {
+                    //   return search.toLowerCase() === '' ? item
+                    //   : item.name.toLowerCase().includes(search);
+                    // })
                       cards.length !== 0 ?
-                      cards.map(card => {
+                      cards.filter((card) => card.name.toLowerCase().includes(search))
+                      .map(card => {
                         return(
                           <tr className='text-center' key={card.id}>
                             <td>{card.id}</td>
