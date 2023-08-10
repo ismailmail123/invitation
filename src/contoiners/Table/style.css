@@ -35,6 +35,9 @@ label{
     display: flex;
     justify-content: end;
 }
+.text-table{
+    font-size: 20px;
+}
 
 @media (max-width: 576px) {
     .search{
@@ -45,4 +48,8 @@ label{
         display: flex;
         justify-content: start;
     }
+    .text-table{
+        font-size: 10px;
+    }
+    
   }

@@ -87,11 +87,12 @@ const Navbar = () => {
               </Form>
             <Table striped>
                   <thead>
-                    <tr className='text-center'>
+                    <tr className='text-center text-table'>
                       <th>ID</th>
                       <th>Nama</th>
                       <th>Alamat</th>
                       <th>Telepon</th>
+                      <th>Action</th>
                       
                     </tr>
                   </thead>
@@ -105,21 +106,15 @@ const Navbar = () => {
                       cards.filter((card) => card.name.toLowerCase().includes(search))
                       .map(card => {
                         return(
-                          <tr className='text-center' key={card.id}>
+                          <tr className='text-center text-table' key={card.id}>
                             <td>{card.id}</td>
                             <td>{card.name}</td>
                             <td>{card.adress}</td>
                             <td>{card.phone}</td>
-                         
-                            
-                            <Row >
-                              <div className='d-flex justify-content-end align-items-center'>
-                                <button className='btn btn-outline-danger me-3' onClick={() => deleteHandler(+card.id)} > <RiDeleteBinLine /> </button>
-                                <button className="btn btn-outline-primary" onClick={()=>navigate(`/update/${card.id}`)}  > <BsPencil /></button>
-                              </div>
-                                
-                              
-                            </Row>
+                            <td className='d-flex justify-content-start align-items-center'>
+                              <button className='btn btn-outline-danger me-2' onClick={() => deleteHandler(+card.id)} > <RiDeleteBinLine /> </button>
+                              <button className="btn btn-outline-primary" onClick={()=>navigate(`/update/${card.id}`)}  > <BsPencil /></button>
+                            </td>
                           </tr>
                           
                         )
