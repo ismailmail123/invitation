@@ -99,7 +99,7 @@ const submitHendler = () => {
                                         <Col sm="8">
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Input Nama Anda"
+                                                placeholder="Input Nama Penerima"
                                                 className='forminput'
                                                 onChange={(e) => setName(e.target.value)} 
                                               />
@@ -125,7 +125,7 @@ const submitHendler = () => {
                                         <Col sm="8">
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Inputkan Alamat lengkap anda"
+                                                placeholder="Inputkan Alamat Penerima"
                                                 className='forminput'
                                                 onChange={(e) => setAdress(e.target.value)}
                                             />
@@ -150,10 +150,11 @@ const submitHendler = () => {
                                         <Col sm="8">
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Inputkan No. Hp anda"
+                                                placeholder="contoh : +6285396978754"
                                                 className='forminput'
                                                 onChange={(e) => setPhone(e.target.value)}
                                             />
+                                            <p className="lh-1">sertakan kode negara (+6285xxx)</p>
                                         </Col>
                                     </Row>
                                 </Form.Group>
