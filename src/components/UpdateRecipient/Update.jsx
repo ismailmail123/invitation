@@ -8,6 +8,7 @@ import axios from 'axios';
 import { update } from '../../redux/recipient/sliceRecipient';
 import swal from "sweetalert";
 import { useForm } from 'react-hook-form';
+import dayjs from 'dayjs';
 
 const FormEditCar = (props) => {
 
@@ -148,13 +149,15 @@ const FormEditCar = (props) => {
                                         <Col sm="4" className="mb-0">
                                             Created at
                                         </Col>
-                                        <Col sm="8">{update?.createdAt}</Col>
+                                        <Col sm="8">{dayjs(update?.createdAt).format("DD MMMM YYYY, HH:MM")}
+                                        {/* {update?.createdAt} */}
+                                        </Col>
                                     </Row>
                                     <Row>
                                         <Col sm="4" className="mb-0">
                                             Updated at
                                         </Col>
-                                        <Col sm="8">{update?.updatedAt}</Col>
+                                        <Col sm="8">{dayjs(update?.updateAt).format("DD MMMM YYYY, HH:MM")}</Col>
                                     </Row>
                                 </div>
                             </fieldset>

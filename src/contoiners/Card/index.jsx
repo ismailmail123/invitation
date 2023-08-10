@@ -8,6 +8,7 @@ import avatar from '../../assets/avatar.jpg';
 import { FaWhatsapp } from 'react-icons/fa';
 import DeleteConfirm from "../../components/Delete/deleteKonfirm";
 import LoadingCard from '../../components/LoadingCard/index';
+import { IoMdNotificationsOutline } from 'react-icons/io';
 
 
 const Navbar = () => {
@@ -85,9 +86,27 @@ const Navbar = () => {
                             <>
                                
                             <Col lg={3} key={id}>
-                                <Card className="mt-3" >
+                                <Card className="mt-3 h-100" >
                                 <Row>
-                                        <Col className="col-8">
+                                        <Col className="col-4">
+                                        <button type="button" className="btn bg-white position-relative">
+                                          <IoMdNotificationsOutline className='w-100' />{
+                                            recipient && recipient.say === null ? 
+                                            <>
+                                            </>
+                                             : 
+                                            <>
+                                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            1
+                                            <span className="visually-hidden">unread messages</span>
+                                          </span>
+                                            </>
+                                           
+                                          }
+                                          
+                                        </button>
+                                        </Col>
+                                        <Col className="col-4">
                                             <Card.Title className="d-flex justify-content-end mt-2">Dear</Card.Title>
                                         </Col>
                                         <Col className="col-4">

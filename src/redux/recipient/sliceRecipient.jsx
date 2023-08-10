@@ -15,19 +15,19 @@ const recipientSlice = createSlice({
                 createdAt: dayjs().format(),
             }
             currentRecipient.push(newRecipient);
-            state.todos = currentRecipient;
+            state.recipients = currentRecipient;
         },
         remove(state, action){
             const currentRecipients = [...state.recipients];
             const { index } = action.payload;
             currentRecipients.splice(index, 1);
-            state.todos = currentRecipients;
+            state.recipients = currentRecipients;
         },
         update (state, action){
             const currentRecipients = [...state.recipients];
             const {index, ...recipientItem} = action.payload;
             currentRecipients[index] = recipientItem
-            state.todos = currentRecipients;
+            state.recipients = currentRecipients;
         },
         setRecipientItem(state, action){
             state.recipientItem = { ...action.payload };
