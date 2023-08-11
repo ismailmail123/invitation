@@ -26,15 +26,15 @@ function Home () {
             </Col>
         </Row>
         <Tabs
-                defaultActiveKey="home"
+                defaultActiveKey="card"
                 transition={false}
                 className="mb-3 justify-content-center"
               >
-                <Tab eventKey="Card" title="Card">
+                <Tab eventKey="card" title="card">
                     <CardHome />
                    
                 </Tab>
-                <Tab eventKey="Table" title="Table">
+                <Tab eventKey="table" title="table">
                 <TableHome />
                  
                 </Tab>
