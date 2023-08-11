@@ -92,7 +92,7 @@ const Navbar = () => {
                       <th>Nama</th>
                       <th>Alamat</th>
                       <th>Telepon</th>
-                      <th>Actions</th>
+                      <th>Aksi</th>
                       
                     </tr>
                   </thead>
@@ -111,7 +111,7 @@ const Navbar = () => {
                             <td>{card.name}</td>
                             <td>{card.adress}</td>
                             <td>{card.phone}</td>
-                            <td className='d-flex justify-content-start align-items-center'>
+                            <td className='d-flex justify-content-end align-items-center'>
                               <button className='btn btn-outline-danger  me-2 p-1 ' onClick={() => deleteHandler(+card.id)} > <RiDeleteBinLine /> </button>
                               <button className="btn btn-outline-primary p-1" onClick={()=>navigate(`/update/${card.id}`)}  > <BsPencil /></button>
                             </td>

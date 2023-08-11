@@ -26,12 +26,12 @@ export const Navigation = () => {
   return (
     <>
       {['md'].map((expand) => (
-        <Navbar key={expand} expand={expand} className="mb-3">
+        <Navbar key={expand} expand={expand} className="mb-3 fixed-top bg-success p-2 text-dark bg-opacity-50">
             <Container fluid>
                 <marquee className = 'fw-bold color-success' style={{width: '65%'}}>Invitation for my Family
                 </marquee>
                 <div className="d-flex align-items-start justify-content-end" style={{width: '15%'}}>
-                          <IoMdNotificationsOutline  className="fs-1  " />
+                          <IoMdNotificationsOutline  className="fs-2  " />
                           
                           <span className=" top-0 start-100 translate-middle badge rounded-pill bg-danger">
                           {cards?.length}             
@@ -39,7 +39,7 @@ export const Navigation = () => {
                             </span>
                         </div>
                 <Image 
-                style={{width: '10%',  
+                style={{width: '35px',  
                 borderRadius: '50%'}} 
                 src={avatar}
                 

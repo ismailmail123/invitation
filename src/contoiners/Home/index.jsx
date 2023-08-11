@@ -12,13 +12,13 @@ function Home () {
 
     return(
         <>
-        <Row>
+        <Row className="mt-5">
             <Col className="d-flex align-items-center justify-content-start">
             <   h3>Invitation</h3>
             </Col>
             <Col className="d-flex align-items-center justify-content-end" >
                 <Button 
-                className="w-50"
+                className="w-50 h-75 d-flex justify-content-center align-items-center"
                 onClick={() => navigate("/add")}
                 >
                     <h4>+add</h4>

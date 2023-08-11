@@ -89,23 +89,30 @@ const Navbar = () => {
                                 <Card className="mt-3 h-100" >
                                 <Row>
                                         <Col className="col-4">
-                                        <button type="button" className="btn bg-white position-relative">
-                                          <IoMdNotificationsOutline className='w-100 h-100' />
+                                        {/* <button type="button" className="btn bg-white position-relative"> */}
+                                          
                                           {
                                             recipient && recipient.say === null ? 
                                             <>
+                                            <div style={{width: '30px'}} className=' d-flex justify-content-center align-items-center'>
+                                          <IoMdNotificationsOutline className='w-100 h-100 fs-6' />
+                                            
+                                            </div>
                                             </>
                                              : 
                                             <>
-                                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                            1+
-                                            <span className="visually-hidden">unread messages</span>
-                                          </span>
+                                             <div style={{width: '60px'}}  className='d-flex justify-content-center align-items-center'>
+                                          <IoMdNotificationsOutline className='w-100 h-100 fs-6' />
+                                            <span className=" top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                              1+
+                                              <span className="visually-hidden">unread messages</span>
+                                            </span>
+                                            </div>
                                             </>
                                            
                                           }
                                           
-                                        </button>
+                                        {/* </button> */}
                                         </Col>
                                         <Col className="col-4">
                                             <Card.Title className="d-flex justify-content-end mt-2">Dear</Card.Title>
