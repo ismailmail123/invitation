@@ -1,44 +1,54 @@
-import React, { useState } from "react";
-import { Button, Container, Form, Nav, Navbar, Offcanvas } from "react-bootstrap";
-
+import React, { useEffect, useState } from "react";
+import { Button, Col, Container, Dropdown, Form, Image, Nav, NavDropdown, Navbar, Offcanvas } from "react-bootstrap";
+import avatar from '../assets/avatar.jpg';
+import { IoMdNotificationsOutline } from 'react-icons/io';
+import axios from "axios";
 
 export const Navigation = () => {
-
+  const [cards, setCards] = useState();
+  const URL = "https://invitation-lm0g.onrender.com"
+  const getCards = () => {
+    axios({
+      method: "GET",
+      url: `${URL}/recipients`
+    })
+    .then(cards => {
+      setCards(cards.data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+  useEffect(() => {
+    getCards()
+  },[])
 
   return (
     <>
       {['md'].map((expand) => (
         <Navbar key={expand} expand={expand} className="mb-3">
             <Container fluid>
-                <marquee className = 'fw-bold color-success' style={{width: '60%'}}>Invitation for my Family
+                <marquee className = 'fw-bold color-success' style={{width: '65%'}}>Invitation for my Family
                 </marquee>
-                <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-                <Navbar.Offcanvas
-                id={`offcanvasNavbar-expand-${expand}`}
-                aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-                placement="end"
-                >
-                    <Offcanvas.Header closeButton>
-                        <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                        SEARCH ENGINE
-                        </Offcanvas.Title>
-                    </Offcanvas.Header>
-                    <Offcanvas.Body className=''>
-                        <Nav className="justify-content-end flex-grow-1 pe-3">
-                                
-                          <Form className="d-flex">
-                            <Form.Control
-                              type="search"
-                              placeholder="Search"
-                              className="me-2"
-                              aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                          </Form>
-                        </Nav>
-                                
-                    </Offcanvas.Body>
-                </Navbar.Offcanvas>
+                <div className="d-flex align-items-start justify-content-end" style={{width: '15%'}}>
+                          <IoMdNotificationsOutline  className="fs-1  " />
+                          
+                          <span className=" top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                          {cards?.length}             
+                              <span className="visually-hidden">unread messages</span>
+                            </span>
+                        </div>
+                <Image 
+                style={{width: '10%',  
+                borderRadius: '50%'}} 
+                src={avatar}
+                
+                />
+                
+                
+               {/* </div> */}
+               
+                
             </Container>
         </Navbar>
     ))}

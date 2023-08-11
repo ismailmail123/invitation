@@ -90,7 +90,8 @@ const Navbar = () => {
                                 <Row>
                                         <Col className="col-4">
                                         <button type="button" className="btn bg-white position-relative">
-                                          <IoMdNotificationsOutline className='w-100 h-100' />{
+                                          <IoMdNotificationsOutline className='w-100 h-100' />
+                                          {
                                             recipient && recipient.say === null ? 
                                             <>
                                             </>
