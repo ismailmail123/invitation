@@ -4,7 +4,7 @@ import Placeholder from 'react-bootstrap/Placeholder';
 
 function LoadingCard() {
   return (
-    <div className="d-flex justify-content-around">
+    <div className="d-flex justify-content-around z-index-n2">
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Placeholder as={Card.Title} animation="glow">
