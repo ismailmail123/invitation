@@ -26,7 +26,7 @@ export const Navigation = () => {
   return (
     <>
       {['md'].map((expand) => (
-        <Navbar key={expand} expand={expand} className="mb-3 fixed-top bg-success p-2 text-dark bg-opacity-50">
+        <Navbar key={expand} expand={expand} style={{position:"sticky", top:"0", backdropFilter:"blur(45)"}}className="mb-3 bg-success p-2 text-dark bg-opacity-50">
             <Container fluid>
                 <marquee className = 'fw-bold color-success' style={{width: '65%'}}>Invitation for my Family
                 </marquee>
