@@ -169,6 +169,15 @@ berkenan untuk hadir dan memberikan do'a restu.
                         <Col lg={3} className='mt-3'>
                           <LoadingCard />
                         </Col>
+                        <Col lg={3} className='mt-3'>
+                          <LoadingCard />
+                        </Col>
+                        <Col lg={3} className='mt-3'>
+                          <LoadingCard />
+                        </Col>
+                        <Col lg={3} className='mt-3'>
+                          <LoadingCard />
+                        </Col>
                       </Row>
                       </>
                      }
