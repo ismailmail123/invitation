@@ -86,7 +86,7 @@ const Navbar = () => {
                             <>
                                
                             <Col lg={3} key={id} className='mt-3'>
-                                <Card className="mt-3 h-100" >
+                                <Card className="mt-3 h-100 z-index-n1" >
                                 <Row>
                                         <Col className="col-4">
                                         {/* <button type="button" className="btn bg-white position-relative"> */}
