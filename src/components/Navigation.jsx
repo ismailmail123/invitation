@@ -24,10 +24,7 @@ export const Navigation = () => {
   },[])
 
   return (
-    <>
-     <div style={{width:"300px", color:"black"}}>
-      conainer
-      </div> 
+    <> 
       {['md'].map((expand) => (
         <Navbar key={expand} expand={expand} style={{position:"sticky", top:"0", backdropFilter:"blur(45)"}}className="mb-3 bg-success p-2 text-dark bg-opacity-50">
             <Container fluid>
