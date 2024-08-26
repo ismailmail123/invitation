@@ -51,7 +51,7 @@ function Invitation () {
 
   useEffect(() => {
     startTimer();
-  });
+  },[]);
     
     return (
         <>
